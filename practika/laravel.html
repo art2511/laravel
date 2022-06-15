@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Laravel Blog</title>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <meta charset="utf-8">
+
+        <link href="prac.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <form name="Sel1">
+            <div id="app">
+                <header v-if="visible">
+                    <div class="flex justify-between mt-6 border-b-4">
+                        <h1 class="text-3xl text-gray-500">Laravel Blog</h1>
+                        <div class="flex justify-end ">
+                            <button type="button" @click="myMethod" class="bg-green-600 text-white mr-4 w-24 rounded-md text-sm h-7">New Post</button>
+                            <select class="text-green-600 mr-4 text-sm h-7">
+                                <option>Admin</option>
+                                <option>User</option>
+                            </select>
+                        </div>
+                    </div>
+                </header>
+
+
+                <div class="mt-6">
+                    <div class="mt-6 mr-4 ml-2 border-2 rounded-md">
+                        <p>
+                            <input name="Header" type="text" size="73" placeholder="Here is the title">
+                        </p>
+                    </div>
+                    <div  class="mt-6 mr-4 ml-2 border-2 rounded-md" >
+                        <select name="Option">
+                            <option>option 1</option>
+                            <option>option 2</option>
+                            <option>option 3</option>
+                            <option> option 4 </option>
+                            <option> option 5 </option>
+                        </select>
+                    </div>
+                    <div class="mt-6 mr-4 ml-2 flex justify-start border-2 rounded-md">
+                        <button type="button" class="mr-4 w-16 bg-green-200 text-black rounded-md">tag</button>
+                        <button type="button" class="mr-4 w-16 bg-green-200 text-black rounded-md">tag 1</button>
+                        <button type="button" class="mr-4 w-16 bg-green-200 text-black rounded-md">tag 2</button>
+                        <p>Add a tag(Tab or Enter to add more)</p>
+                    </div>
+                    <div class="border-2 mt-6 mr-4 ml-2">
+                        <div class="ml-2 mt-6 border-b-4">
+                            <button type="button" onclick="click1()" class="mr-4"><img src="B.png" alt="Кнопка «button»" width="20" height="20"></button>
+                            <button type="button" onclick="click2()" class="mr-4"><img src="I.jpg" alt="Кнопка «button»" width="20" height="20"></button>
+                            <button type="button" onclick="click3()" class="mr-4"><img src="U.png" alt="Кнопка «button»" width="20" height="20"></button>
+                            <button type="button" onclick="click4()" class="mr-4"><img src="s.png" alt="Кнопка «button»" width="20" height="20"></button>
+                            <button type="button" onclick="click5()" class="mr-4"><img src="sort.png" alt="Кнопка «button» " width="20" height="20"></button>
+                            <button type="button" class="mr-4"><img src="sort1.png" alt="Кнопка «button»" width="20" height="20"></button>
+                            <button type="button" class="mr-4"><img src="zap.png" alt="Кнопка «button»" width="20" height="20"></button>
+                            <button type="button" class="mr-4"><img src="znak.PNG" alt="Кнопка «button»" width="20" height="20"></button>
+                            <button type="button" class="mr-4"><img src="cep.png" alt="Кнопка «button»" width="20" height="20"></button>
+                            <button type="button" class="mr-4"><img src="image.png" alt="Кнопка «button»" width="20" height="20"></button>
+                            <button type="button" class="mr-4"><img src="sleva.PNG" alt="Кнопка «button»" width="20" height="20"></button>
+                            <button type="button" class="mr-4"><img src="spravo.png" alt="Кнопка «button»" width="20" height="20"></button>
+                            <button type="button" class="mr-4"><img src="m.png" alt="Кнопка «button»" width="20" height="20"></button>
+                            <button type="button" class="mr-4"> <img src="stic.PNG" alt="Кнопка «button»" width="20" height="20"></button>
+                        </div>
+                    
+                        <textarea NAME="Letter" cols="40" rows="3" id="strong" class="mt-6 ml-2" size="50" type="text" placeholder="Beautiful day."></textarea>
+                        <img NAME="Img" class="ml-2 mt-6" src="car.jpg" width="400" height="400">
+                    
+                    </div>
+                    <button type="submit" onClick="Complete()" class=" ml-2 bg-green-600 text-white mr-4 w-32 rounded-md mt-6">Publish</button>
+                </div>
+            </div>
+        </form>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+        
+        <script>
+            
+            function Complete()
+            {
+                var Elem="Пост успешно опубликован"+
+                "\nЗаголовок: " + document.Sel1.Header.value+
+                "\nОпция: " + document.Sel1.Option.value+
+                "\nОписание: " + document.Sel1.Letter.value+
+                "\nИзображение: " + document.Sel1.Img.value;
+                alert(Elem);
+            }
+            
+            
+        </script>
+        <script>
+            function click1() {
+                const st = document.getElementById('strong');
+                st.style.fontWeight= "bold";
+            };
+            function click2() {
+                const it = document.getElementById('strong');
+                it.style.fontStyle= "italic";
+            };
+            function click3() {
+                const un = document.getElementById('strong');
+                un.style.textDecoration= "underline";
+            };
+            function click4() {
+                const th = document.getElementById('strong');
+                th.style.textDecoration= "line-through";
+            };
+            function click5() {
+                const th = document.getElementById('strong');
+                th.style.textDecoration= "numeric";
+            };
+        </script>
+        <script>
+            new Vue({
+                el: "#app",
+                data: {
+                    visible: true
+            },
+            methods: {
+                myMethod () {
+                    this.visible = false
+                }
+            }
+        })</script>
+        
+        
+    </body>
+</html>
